@@ -1,0 +1,36 @@
+{
+  "name": "lab5-sistema-tickets-metro",
+  "version": "1.0.0",
+  "description": "Sistema básico de venta de tickets del metro - Laboratorio 5",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "test:watch": "jest --watch",
+    "test:simple": "jest",
+    "test:solution": "npm run backup && cp index.solution.js index.js && npm test && npm run restore",
+    "backup": "if [ -f index.js ]; then cp index.js index.backup.js; fi",
+    "restore": "if [ -f index.backup.js ]; then mv index.backup.js index.js; fi",
+    "run:solution": "node index.solution.js"
+  },
+  "keywords": [
+    "lab",
+    "javascript",
+    "testing",
+    "metro",
+    "tickets"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testMatch": [
+      "**/tests/**/*.js"
+    ]
+  }
+}
